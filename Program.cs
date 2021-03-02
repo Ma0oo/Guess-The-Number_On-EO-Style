@@ -1,6 +1,8 @@
 ﻿using System;
+using GuessTheNumber.Attemps;
 using GuessTheNumber.Messange;
 using GuessTheNumber.Messange.Decorates;
+using GuessTheNumber.ValueClass;
 
 
 namespace GuessTheNumber
@@ -11,23 +13,19 @@ namespace GuessTheNumber
         {
             int min = 0;
             int max = 100;
-            int countTry = 100;
+            int countTry = 5;
 
-            Random random = new Random();
-            Secret secret = new Secret(random, min, max);
-
-            new AttempForgeColorDecorate(
-                new AttempMessange(
-                    new Attempt(
-                        new Different(
-                            secret,
-                            new Guess(
-                                new CheckInt(min, max)
-                            )
-                        ), countTry
-                    )
-                ), ConsoleColor.Cyan).Say(true);
-    }
+            new AttempMessange(
+                new Attempt(
+                    new Different(
+                        new Secret(new Random(), min, max),
+                        new Guess(
+                            new CheckInt(min, max)
+                                )
+                            ), countTry
+                        )   
+                    ).Say(true);
+        }
     }
 
     public enum ResultDifenet

@@ -1,4 +1,5 @@
 ﻿using System;
+using GuessTheNumber.Attemps;
 using GuessTheNumber.Interfaces;
 
 namespace GuessTheNumber.Messange
@@ -14,7 +15,7 @@ namespace GuessTheNumber.Messange
 
         public void Say(bool delay)
         {
-            Console.WriteLine(_attempt.GetResult());
+            _attempt.GetResultAttempt().Write();
             if(delay)
                 Console.ReadKey();
         }

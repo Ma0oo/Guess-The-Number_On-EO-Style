@@ -46,6 +46,9 @@
     <Compile Include="Attemps\Attempt.cs" />
     <Compile Include="CheckInt.cs" />
     <Compile Include="Different.cs" />
+    <Compile Include="Interfaces\IGuess.cs" />
+    <Compile Include="ValueClass\DecoratesGuess\BeforeMessageDecorateGues.cs" />
+    <Compile Include="ValueClass\DecoratesGuess\ForgeColorDecorateGuess.cs" />
     <Compile Include="ValueClass\DecoratesResults\ForgeColorDecorateResultString.cs" />
     <Compile Include="ValueClass\Guess.cs" />
     <Compile Include="Interfaces\IAttempt.cs" />

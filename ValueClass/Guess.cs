@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using GuessTheNumber.Interfaces;
 
 namespace GuessTheNumber.ValueClass
 {
-    class Guess
+    class Guess : IGuess
     {
         private CheckInt _checkInt;
 
@@ -18,7 +15,6 @@ namespace GuessTheNumber.ValueClass
         public int GetIntFromInput()
         {
             int result = int.MinValue;
-            Console.WriteLine("Введите число");
             while (_checkInt.TryParserToInt(Console.ReadLine(), ref result) == false)
             {
                 Console.WriteLine("Некоректный ввод");

@@ -1,16 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using GuessTheNumber.ValueClass;
+﻿using GuessTheNumber.ValueClass;
+using GuessTheNumber.Interfaces;
 
 namespace GuessTheNumber
 {
     class Different
     {
         private Secret _secret;
-        private Guess _guess;
+        private IGuess _guess;
 
-        public Different(Secret secret, Guess guess)
+        public Different(Secret secret, IGuess guess)
         {
             _secret = secret;
             _guess = guess;

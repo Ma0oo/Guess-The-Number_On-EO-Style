@@ -3,6 +3,8 @@ using GuessTheNumber.Attemps;
 using GuessTheNumber.Messange;
 using GuessTheNumber.Messange.Decorates;
 using GuessTheNumber.ValueClass;
+using GuessTheNumber.ValueClass.DecoratesGuess;
+using GuessTheNumber.Interfaces;
 
 
 namespace GuessTheNumber
@@ -19,8 +21,12 @@ namespace GuessTheNumber
                 new Attempt(
                     new Different(
                         new Secret(new Random(), min, max),
-                        new Guess(
-                            new CheckInt(min, max)
+                            new  ForgeColorDecorateGuess(ConsoleColor.Cyan,
+                                new BeforeMessageDecorateGues($"Попробуйте угадать число. В водить только цифры {min}-{max}. У вас {countTry} попыток.", 
+                                    new Guess(
+                                        new CheckInt(min, max)
+                                        )
+                                    )
                                 )
                             ), countTry
                         )   

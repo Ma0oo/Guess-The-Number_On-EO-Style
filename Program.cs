@@ -1,11 +1,9 @@
 ﻿using System;
 using GuessTheNumber.Attemps;
 using GuessTheNumber.Messange;
-using GuessTheNumber.Messange.Decorates;
 using GuessTheNumber.ValueClass;
 using GuessTheNumber.ValueClass.DecoratesGuess;
-using GuessTheNumber.Interfaces;
-
+using GuessTheNumber.ValueClass.Factory;
 
 namespace GuessTheNumber
 {
@@ -15,27 +13,27 @@ namespace GuessTheNumber
         {
             int min = 0;
             int max = 100;
-            int countTry = 5;
+            int countTry = 8;
+
+            FactoryResultDifenet factoryResult = new FactoryResultDifenet();
 
             new AttempMessange(
                 new Attempt(
                     new Different(
                         new Secret(new Random(), min, max),
-                            new  ForgeColorDecorateGuess(ConsoleColor.Cyan,
-                                new BeforeMessageDecorateGues($"Попробуйте угадать число. В водить только цифры {min}-{max}. У вас {countTry} попыток.", 
-                                    new Guess(
-                                        new CheckInt(min, max)
+                            factoryResult,
+                                new  ForgeColorDecorateGuess(ConsoleColor.Cyan,
+                                    new BeforeMessageDecorateGues($"Попробуйте угадать число, вводить только цифры {min}-{max}", 
+                                        new Guess(
+                                            new CheckInt(min, max)
                                         )
                                     )
                                 )
-                            ), countTry
+                            ), 
+                    countTry,
+                    factoryResult
                         )   
                     ).Say(true);
         }
-    }
-
-    public enum ResultDifenet
-    {
-        More, Less, Equally
     }
 }

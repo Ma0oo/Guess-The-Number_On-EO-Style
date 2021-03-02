@@ -1,7 +1,9 @@
-﻿namespace GuessTheNumber.Interfaces
+﻿using GuessTheNumber.ValueClass;
+
+namespace GuessTheNumber.Interfaces
 {
     interface IDifferent
     {
-        ResultDifenet Difference();
+        ResultDiferet Difference();
     }
 }

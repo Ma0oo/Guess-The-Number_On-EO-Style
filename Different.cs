@@ -1,28 +1,31 @@
 ﻿using GuessTheNumber.ValueClass;
 using GuessTheNumber.Interfaces;
+using GuessTheNumber.ValueClass.Factory;
 
 namespace GuessTheNumber
 {
-    class Different
+    class Different : IDifferent
     {
         private Secret _secret;
+        private FactoryResultDifenet _factoryResult;
         private IGuess _guess;
 
-        public Different(Secret secret, IGuess guess)
+        public Different(Secret secret, FactoryResultDifenet factoryResult ,IGuess guess)
         {
             _secret = secret;
             _guess = guess;
+            _factoryResult = factoryResult;
         }
 
-        public ResultDifenet Difference()
+        public ResultDiferet Difference()
         {
             int guess = _guess.GetIntFromInput();
             if (_secret.IsMore(guess))
-                return ResultDifenet.More;
+                return _factoryResult.MakeResultDifferentOfMore(": Число должно быть больше");
             else if (_secret.IsLess(guess))
-                return ResultDifenet.Less;
+                return _factoryResult.MakeResultDifferentOfLess(": Число должно быть меньше");
             else
-                return ResultDifenet.Equally;
+                return _factoryResult.MakeResultDifferentOfEqules(": Число - правильное");
         }
     }
 }

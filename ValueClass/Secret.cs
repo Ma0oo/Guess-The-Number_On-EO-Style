@@ -1,4 +1,5 @@
 ﻿using System;
+using GuessTheNumber.Interfaces;
 
 namespace GuessTheNumber.ValueClass
 {
@@ -6,17 +7,17 @@ namespace GuessTheNumber.ValueClass
     {
         private int _number;
 
-        public Secret(Random random, int min, int max)
+        public Secret(Random random, int min, int max, IMessange message)
         {
             _number = random.Next(min, max);
-            Console.WriteLine($"Число загадано между {min} и {max}");
+            message.Say(false);
         }
 
-        public bool IsMore(int compareInt)
+        public bool More(int compareInt)
         {
             return _number > compareInt;
         }
-        public bool IsLess(int compareInt)
+        public bool Less(int compareInt)
         {
             return _number < compareInt;
         }

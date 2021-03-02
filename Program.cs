@@ -1,6 +1,7 @@
 ﻿using System;
 using GuessTheNumber.Attemps;
 using GuessTheNumber.Messange;
+using GuessTheNumber.Messange.Decorates;
 using GuessTheNumber.ValueClass;
 using GuessTheNumber.ValueClass.DecoratesGuess;
 using GuessTheNumber.ValueClass.Factory;
@@ -15,25 +16,34 @@ namespace GuessTheNumber
             int max = 100;
             int countTry = 8;
 
-            FactoryResultDifenet factoryResult = new FactoryResultDifenet();
+            FactoryResultDifferent factoryResult = new FactoryResultDifferent();
 
             new AttempMessange(
                 new Attempt(
                     new Different(
-                        new Secret(new Random(), min, max),
+                        new Secret(
+                            new Random(), 
+                                min, 
+                                max, 
+                                new ForgeColorDecorateIMessange(
+                                    new DialogMessange(
+                                        $"Загадано число между {min} и {max}"), 
+                                    ConsoleColor.Blue)),
                             factoryResult,
-                                new  ForgeColorDecorateGuess(ConsoleColor.Cyan,
-                                    new BeforeMessageDecorateGues($"Попробуйте угадать число, вводить только цифры {min}-{max}", 
-                                        new Guess(
-                                            new CheckInt(min, max)
-                                        )
+                            new  ForgeColorDecorateGuess(
+                                ConsoleColor.Yellow,
+                                new BeforeMessageDecorateGues(
+                                    $"Попробуйте угадать число, вводить только цифры {min}-{max}", 
+                                    new Guess(
+                                        new CheckInt(min, max)
                                     )
                                 )
-                            ), 
-                    countTry,
-                    factoryResult
-                        )   
-                    ).Say(true);
+                            )
+                        ), 
+                countTry,
+                factoryResult
+                )  
+            ).Say(true);
         }
     }
 }

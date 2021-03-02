@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace GuessTheNumber.ValueClass
 {
-    class ResultDiferet
+    class ResultDiferent
     {
         private string _typeDiferet;
         private string _message;
 
-        public ResultDiferet(string typeDiferent, string message)
+        public ResultDiferent(string typeDiferent, string message)
         {
             _typeDiferet = typeDiferent;
             _message = message;
@@ -26,7 +26,7 @@ namespace GuessTheNumber.ValueClass
         {
             if (obj.GetType() != this.GetType()) return false;
 
-            return ((ResultDiferet)obj)._typeDiferet == this._typeDiferet;
+            return ((ResultDiferent)obj)._typeDiferet == this._typeDiferet;
         }
     }
 }

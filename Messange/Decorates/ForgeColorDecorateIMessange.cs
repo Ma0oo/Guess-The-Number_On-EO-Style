@@ -3,12 +3,12 @@
 
 namespace GuessTheNumber.Messange.Decorates
 {
-    class AttempForgeColorDecorate : IMessange
+    class ForgeColorDecorateIMessange : IMessange
     {
         private IMessange _messange;
         private System.ConsoleColor _color;
 
-        public AttempForgeColorDecorate(IMessange messanger, System.ConsoleColor color)
+        public ForgeColorDecorateIMessange(IMessange messanger, System.ConsoleColor color)
         {
             _messange = messanger;
             _color = color;
@@ -20,7 +20,6 @@ namespace GuessTheNumber.Messange.Decorates
             System.Console.ForegroundColor = _color;
             _messange.Say(delay);
             System.Console.ForegroundColor = temp;
-
         }
     }
 }

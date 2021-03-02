@@ -4,6 +4,6 @@ namespace GuessTheNumber.Interfaces
 {
     interface IDifferent
     {
-        ResultDiferet Difference();
+        ResultDiferent Difference();
     }
 }

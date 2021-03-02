@@ -6,9 +6,9 @@ namespace GuessTheNumber.Messange
 {
     class AttempMessange : IMessange
     {
-        private Attempt _attempt;
+        private IAttempt _attempt;
 
-        public AttempMessange(Attempt attempt)
+        public AttempMessange(IAttempt attempt)
         {
             _attempt = attempt;
         }

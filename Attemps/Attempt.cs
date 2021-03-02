@@ -9,11 +9,11 @@ namespace GuessTheNumber.Attemps
     class Attempt : IAttempt
     {
         private int _countTry;
-        private Different _different;
-        private FactoryResultDifenet _factoryResult;
+        private IDifferent _different;
+        private FactoryResultDifferent _factoryResult;
 
 
-        public Attempt(Different different, int countTry, FactoryResultDifenet factoryResultDifenet)
+        public Attempt(IDifferent different, int countTry, FactoryResultDifferent factoryResultDifenet)
         {
             _countTry = countTry;
             _different = different;
@@ -24,7 +24,7 @@ namespace GuessTheNumber.Attemps
         {
             for (int currentTry = 0; currentTry < _countTry; currentTry++)
             {
-                ResultDiferet result = _different.Difference();
+                ResultDiferent result = _different.Difference();
                 if (result.Equals(_factoryResult.MakeResultDifferentOfEqules("")))
                     return new ForgeColorDecorateResultString(
                         new ResultString($"Вы угадали число за {currentTry + 1} попыток"), 

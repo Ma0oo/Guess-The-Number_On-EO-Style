@@ -30,9 +30,9 @@ namespace GuessTheNumber
                                             $"Загадано число между {min} и {max}"), 
                                         ConsoleColor.Blue)),
                                 factoryResult,
-                                new  ForgeColorDecorateGuess(
+                                new  ForgeColorDecorateIntInput(
                                     ConsoleColor.Yellow,
-                                    new BeforeMessageDecorateGues(
+                                    new BeforeMessageDecorateIntInput(
                                         $"\nПопробуйте угадать число, вводить только цифры {min}-{max}", 
                                         new BoundedIntInput(
                                             new CheckInt(min, max)

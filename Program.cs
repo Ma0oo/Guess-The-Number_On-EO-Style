@@ -36,14 +36,14 @@ namespace GuessTheNumber
                                     $"\nПопробуйте угадать число, вводить только цифры {min}-{max}", 
                                     new Guess(
                                         new CheckInt(min, max)
+                                        )
                                     )
                                 )
-                            )
-                        ), 
-                countTry,
-                factoryResult
-                )  
-            ).Say(true);
+                            ), 
+                    countTry,
+                    factoryResult
+                    )  
+                ).Say(true);
         }
     }
 }

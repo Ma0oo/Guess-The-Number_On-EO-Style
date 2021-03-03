@@ -33,7 +33,7 @@ namespace GuessTheNumber
                             new  ForgeColorDecorateGuess(
                                 ConsoleColor.Yellow,
                                 new BeforeMessageDecorateGues(
-                                    $"Попробуйте угадать число, вводить только цифры {min}-{max}", 
+                                    $"\nПопробуйте угадать число, вводить только цифры {min}-{max}", 
                                     new Guess(
                                         new CheckInt(min, max)
                                     )

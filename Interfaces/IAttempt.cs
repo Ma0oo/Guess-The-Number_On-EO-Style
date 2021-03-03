@@ -8,6 +8,6 @@ namespace GuessTheNumber.Interfaces
 {
     interface IAttempt
     {
-        IResult GetResultAttempt();
+        IMessange GetResultAttempt();
     }
 }

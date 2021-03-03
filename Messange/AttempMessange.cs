@@ -15,7 +15,7 @@ namespace GuessTheNumber.Messange
 
         public void Say(bool delay)
         {
-            _attempt.GetResultAttempt().Write();
+            _attempt.GetResultAttempt().Say(false);
             if(delay)
                 Console.ReadKey();
         }

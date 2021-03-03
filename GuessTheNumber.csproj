@@ -46,24 +46,21 @@
     <Compile Include="Attemps\Attempt.cs" />
     <Compile Include="CheckInt.cs" />
     <Compile Include="Different.cs" />
-    <Compile Include="Interfaces\IGuess.cs" />
+    <Compile Include="Interfaces\IIntInput.cs" />
     <Compile Include="Messange\DialogMessange.cs" />
     <Compile Include="ValueClass\DecoratesGuess\BeforeMessageDecorateGues.cs" />
     <Compile Include="ValueClass\DecoratesGuess\ForgeColorDecorateGuess.cs" />
-    <Compile Include="ValueClass\DecoratesResults\ForgeColorDecorateResultString.cs" />
     <Compile Include="ValueClass\Factory\FactoryResultDifferent.cs" />
     <Compile Include="ValueClass\Guess.cs" />
     <Compile Include="Interfaces\IAttempt.cs" />
     <Compile Include="Interfaces\IDifferent.cs" />
     <Compile Include="Interfaces\IMessange.cs" />
-    <Compile Include="Interfaces\IResult.cs" />
     <Compile Include="Messange\AttempMessange.cs" />
     <Compile Include="Messange\Decorates\ForgeColorDecorateIMessange.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ValueClass\ResultDiferent.cs" />
     <Compile Include="ValueClass\Secret.cs" />
-    <Compile Include="ValueClass\ResultString.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

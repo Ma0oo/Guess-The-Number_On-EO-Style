@@ -3,11 +3,11 @@ using GuessTheNumber.Interfaces;
 
 namespace GuessTheNumber.ValueClass
 {
-    class Guess : IIntInput
+    class BoundedIntInput : IIntInput
     {
         private CheckInt _checkInt;
 
-        public Guess(CheckInt checkInt)
+        public BoundedIntInput(CheckInt checkInt)
         {
             _checkInt = checkInt;
         }

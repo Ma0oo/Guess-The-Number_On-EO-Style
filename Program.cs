@@ -17,33 +17,38 @@ namespace GuessTheNumber
             int countTry = 8;
 
             FactoryResultDifferent factoryResult = new FactoryResultDifferent();
-
-            new AttempMessange(
-                new Attempt(
-                    new Different(
-                        new Secret(
-                            new Random(), 
-                                min, 
-                                max, 
-                                new ForgeColorDecorateIMessange(
-                                    new DialogMessange(
-                                        $"Загадано число между {min} и {max}"), 
-                                    ConsoleColor.Blue)),
-                            factoryResult,
-                            new  ForgeColorDecorateGuess(
-                                ConsoleColor.Yellow,
-                                new BeforeMessageDecorateGues(
-                                    $"\nПопробуйте угадать число, вводить только цифры {min}-{max}", 
-                                    new Guess(
-                                        new CheckInt(min, max)
+            new EndlessRepetitionWithExitDecorateIMessange(
+                new AttempMessange(
+                    new Attempt(
+                        new Different(
+                            new Secret(
+                                new Random(), 
+                                    min, 
+                                    max, 
+                                    new ForgeColorDecorateIMessange(
+                                        new DialogMessange(
+                                            $"Загадано число между {min} и {max}"), 
+                                        ConsoleColor.Blue)),
+                                factoryResult,
+                                new  ForgeColorDecorateGuess(
+                                    ConsoleColor.Yellow,
+                                    new BeforeMessageDecorateGues(
+                                        $"\nПопробуйте угадать число, вводить только цифры {min}-{max}", 
+                                        new BoundedIntInput(
+                                            new CheckInt(min, max)
+                                            )
                                         )
                                     )
-                                )
-                            ), 
-                    countTry,
-                    factoryResult
-                    )  
-                ).Say(true);
+                                ), 
+                        countTry,
+                        factoryResult
+                        )  
+                    ),
+                new FreeIntInput(),
+                new ForgeColorDecorateIMessange(
+                    new DialogMessange("Введите 0 для выхода. Другое число продолжит игру\n"),
+                    ConsoleColor.Magenta), 
+                0).Say(true);
         }
     }
 }

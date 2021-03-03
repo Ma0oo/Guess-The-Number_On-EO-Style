@@ -3,7 +3,7 @@ using GuessTheNumber.Interfaces;
 
 namespace GuessTheNumber.ValueClass
 {
-    class Guess : IGuess
+    class Guess : IIntInput
     {
         private CheckInt _checkInt;
 

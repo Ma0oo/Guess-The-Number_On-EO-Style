@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GuessTheNumber.Interfaces
 {
-    interface IGuess
+    interface IIntInput
     {
         int GetIntFromInput();
     }

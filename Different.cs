@@ -8,9 +8,9 @@ namespace GuessTheNumber
     {
         private Secret _secret;
         private FactoryResultDifferent _factoryResult;
-        private IGuess _guess;
+        private IIntInput _guess;
 
-        public Different(Secret secret, FactoryResultDifferent factoryResult ,IGuess guess)
+        public Different(Secret secret, FactoryResultDifferent factoryResult ,IIntInput guess)
         {
             _secret = secret;
             _guess = guess;

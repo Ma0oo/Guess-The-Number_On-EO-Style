@@ -5,12 +5,12 @@ using GuessTheNumber.ValueClass;
 
 namespace GuessTheNumber.ValueClass.DecoratesGuess
 {
-    class ForgeColorDecorateGuess : IGuess
+    class ForgeColorDecorateGuess : IIntInput
     {
         private ConsoleColor _color;
-        private IGuess _guess;
+        private IIntInput _guess;
 
-        public ForgeColorDecorateGuess(ConsoleColor color, IGuess guess)
+        public ForgeColorDecorateGuess(ConsoleColor color, IIntInput guess)
         {
             _color = color;
             _guess = guess;

@@ -47,10 +47,10 @@
     <Compile Include="CheckInt.cs" />
     <Compile Include="Different.cs" />
     <Compile Include="Interfaces\IIntInput.cs" />
-    <Compile Include="Messange\Decorates\EndlessRepetitionDecorateIMessange.cs" />
+    <Compile Include="Messange\Decorates\EndlessRepetitionWithExitDecorateIMessange.cs" />
     <Compile Include="Messange\DialogMessange.cs" />
-    <Compile Include="ValueClass\DecoratesGuess\BeforeMessageDecorateGues.cs" />
-    <Compile Include="ValueClass\DecoratesGuess\ForgeColorDecorateGuess.cs" />
+    <Compile Include="ValueClass\DecoratesGuess\BeforeMessageDecorateIntInput.cs" />
+    <Compile Include="ValueClass\DecoratesGuess\ForgeColorDecorateIntInput.cs" />
     <Compile Include="ValueClass\Factory\FactoryResultDifferent.cs" />
     <Compile Include="ValueClass\BoundedIntInput.cs" />
     <Compile Include="Interfaces\IAttempt.cs" />
